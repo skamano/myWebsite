@@ -81,8 +81,8 @@
                     <span class="nav-link-inner-text">💾 GitHub</span>
                   </a>
                 </li>
-                <li class="nav-item">
-                    <a href="resume" class="nav-link tm-social-link" role="button"><span class="nav-link-inner-text">📝 Resume</span></a>
+                {% comment %} <li class="nav-item"> {% endcomment %}
+                    {% comment %} <a href="resume" class="nav-link tm-social-link" role="button"><span class="nav-link-inner-text">📝 Resume</span></a> {% endcomment %}
                 {% comment %} <li class="nav-item">
                     <a href="login.html" class="nav-link" role="button">
                         <span class="nav-link-inner-text">Login</span>
@@ -673,12 +673,13 @@
                                                 <p>An attempt at understanding discrete-time Markov Decision processes with continuous and vector-valued state spaces and 
                                                 complex reward functions. This project explores the practicality of meta learning techniques by applying them to simulated 
                                                 drone racing, with several environments and simulation engine provided by <a href="https://github.com/microsoft/AirSim-NeurIPS2019-Drone-Racing">AirSimNeurips</a>, 
-                                                which provides a number of planning and perceptions tasks from which these problems can be defined.</p>
+                                                which provides a number of planning and perception tasks from which these problems can be defined.</p>
 
                                                 <p>That said, the key motivation for starting this project was using a single network which could incorporate visual 
                                                 stimulus, and optionally egomotion data from an external algorithm, in order to predict parameters for a distribution 
-                                                defined over the input space conditioned on the current state. Additionally, because each state and image is not independent across time,
-                                                a recurrent architecture can predict smooth trajectories which account for the progression of previous states into the current state.
+                                                defined over the input space conditioned on the current state. Additionally, because successive states and images are correlated across time,
+                                                a recurrent architecture can predict smooth trajectories which account for the progression of previous states into the current state, i.e. we are capable of 
+                                                implicitly modeling the internal (often nonlinear) dynamics of time-varying causal systems instead of only time-invariant systems.
                                                 </p>
 
                                                 <a href="https://github.com/skamano/Meta_RL_racing" target="_blank" class="btn btn-sm mr-2 btn-primary border-dark"
